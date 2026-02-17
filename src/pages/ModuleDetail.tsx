@@ -3,6 +3,7 @@ import { modulesData } from "../data/modulesData";
 import { modulesStatus } from "../data/modulesStatus";
 import StatusBadge from "../components/StatusBadge";
 import CodeBlock from "../components/CodeBlock";
+import { getModuleStatus } from "../utils/getModuleStatus";
 
 export default function ModuleDetail() {
   const { id } = useParams();
@@ -12,7 +13,18 @@ export default function ModuleDetail() {
     return <div className="p-8">Módulo no encontrado</div>;
   }
 
-  const status = modulesStatus[module.id];
+  const status = getModuleStatus(module.id, modulesStatus);
+
+  if (status === "locked") {
+    return (
+      <div className="max-w-3xl mx-auto py-20 text-center space-y-6">
+        <h1 className="text-4xl font-bold">🔒 Módulo bloqueado</h1>
+        <p className="text-gray-600 text-lg">
+          Debes completar el módulo anterior antes de acceder a este contenido.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-12 space-y-16">
@@ -96,11 +108,18 @@ export default function ModuleDetail() {
 
                 {/* Sintaxis */}
                 {item.syntax && (
-                  <div className="space-y-2">
-                    <p className="font-medium text-gray-800">
-                      🧩 Sintaxis
+                  <div className="space-y-3">
+                    <p className="uppercase text-xs tracking-wider text-gray-400 font-semibold">
+                      Sintaxis
                     </p>
-                    <CodeBlock code={item.syntax} />
+
+                    {item.syntaxAsCode ? (
+                      <CodeBlock code={item.syntax} />
+                    ) : (
+                      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 font-mono text-sm text-gray-800 whitespace-pre-line">
+                        {item.syntax}
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -120,6 +139,21 @@ export default function ModuleDetail() {
                     <p className="text-red-700 text-sm font-medium">
                       ⚠ {item.commonError}
                     </p>
+                  </div>
+                )}
+
+                {/* Documentacion personalizada*/}
+
+                {(section?.documentation) && (
+                  <div className="mb-6">
+                    <a
+                      href={section.documentation ?? module.documentation}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-600 hover:text-blue-800 transition font-medium"
+                    >
+                      Profundizar en documentación oficial →
+                    </a>
                   </div>
                 )}
               </div>
