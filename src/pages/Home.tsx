@@ -1,31 +1,37 @@
 import { modulesData } from "../data/modulesData";
 import { modulesStatus } from "../data/modulesStatus";
-import { Link } from "react-router-dom";
+import ModuleCard from "../components/ModuleCard";
+import ProgressBar from "../components/ProgressBar";
 
 export default function Home() {
+  const totalModules = modulesData.length;
+  const completedModules = Object.values(modulesStatus).filter(
+    (status) => status === "completed"
+  ).length;
+
+  const percentage = Math.round(
+    (completedModules / totalModules) * 100
+  );
+
   return (
     <div className="max-w-5xl mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-8">
+      <h1 className="text-4xl font-bold mb-4">
         Aprendiendo 🚀
       </h1>
 
+      <p className="text-gray-600 mb-8">
+        Aprende JavaScript y Git como en un equipo real.
+      </p>
+
+      <ProgressBar percentage={percentage} />
+
       <div className="grid gap-6">
         {modulesData.map((module) => (
-          <Link
+          <ModuleCard
             key={module.id}
-            to={`/modulo/${module.id}`}
-            className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition"
-          >
-            <h2 className="text-xl font-semibold">
-              {module.title}
-            </h2>
-            <p className="text-gray-600 mt-2">
-              {module.description}
-            </p>
-            <p className="mt-4 text-sm font-medium">
-              Estado: {modulesStatus[module.id]}
-            </p>
-          </Link>
+            module={module}
+            status={modulesStatus[module.id]}
+          />
         ))}
       </div>
     </div>
