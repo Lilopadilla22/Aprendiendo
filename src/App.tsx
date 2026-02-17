@@ -6,7 +6,7 @@ import ModuleDetail from "./pages/ModuleDetail";
 
 function App() {
   return (
-    <div className="bg-background min-h-screen text-textDark">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
