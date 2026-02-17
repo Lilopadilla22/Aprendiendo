@@ -1,4 +1,4 @@
-export type ModuleStatus = "locked" | "in-progress" | "completed";
+export type ModuleStatus = "locked" | "in-progress" | "completed" ;
 
 export interface SectionItem {
   title: string;
@@ -6,11 +6,13 @@ export interface SectionItem {
   example?: string;
   description: string;
   commonError?: string;
+  syntaxAsCode?: boolean;
 }
 
 export interface ModuleSection {
   title: string;
   items: SectionItem[];
+  documentation?: string;
 }
 
 export interface Module {
