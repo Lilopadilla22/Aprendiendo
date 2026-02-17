@@ -83,8 +83,63 @@ export const modulesData: Module[] = [
             commonError:
               "Error común: Hacer merge desde la rama equivocada y mezclar cambios en la dirección incorrecta.",
           },
+
         ],
       },
+      {
+        title: "Convención de Commits (estilo profesional)",
+        documentation: "https://www.conventionalcommits.org/es/v1.0.0/",
+        items: [
+          {
+            title: "Formato recomendado",
+            description:
+              "Un buen commit explica QUÉ cambió y POR QUÉ. Usaremos una convención simple y profesional basada en Conventional Commits.",
+            syntax:
+              "tipo: descripcion breve\n\n// opcional\ncuerpo (qué y por qué)\n\n// opcional\nrefs: #ticket o link",
+            syntaxAsCode: false,
+            example:
+              "feat: agregar seccion de comandos git\n\nSe agrega una sección con sintaxis, ejemplos y errores comunes para el módulo 1.\n\nrefs: #12",
+            commonError:
+              "Hacer commits genéricos como 'cambios' o 'update'. No sirven para entender el historial."
+          },
+          {
+            title: "Tipos de commit más usados",
+            description:
+              "Estos tipos ayudan a entender el historial y facilitan el trabajo en equipo.",
+            syntax:
+              "feat:     nueva funcionalidad\nfix:      corrección de bug\nrefactor: cambio interno sin cambiar funcionalidad\nstyle:    cambios de formato (espacios, lint) sin lógica\ndocs:     cambios en documentación\nchore:    tareas de mantenimiento (deps, scripts)\ntest:     agregar o ajustar tests",
+            syntaxAsCode: false,
+            example:
+              "feat: agregar modulo 2 fundamentos javascript\nfix: corregir enlace de documentación en ModuleDetail\nrefactor: reorganizar estructura de sections\ndocs: agregar README de ejercicios del modulo 2\nchore: actualizar dependencias",
+            commonError:
+              "Usar un tipo incorrecto para todo (por ejemplo, poner feat cuando es refactor) y confundir el propósito del cambio."
+          },
+          {
+            title: "Reglas para un buen mensaje",
+            description:
+              "La descripción debe ser corta, clara y en presente. Idealmente en minúsculas y sin punto final.",
+            syntax:
+              "tipo: verbo + objeto (máx 72 caracteres)\n\nEj: feat: agregar filtro de búsqueda",
+            syntaxAsCode: false,
+            example:
+              "fix: evitar crash cuando status no existe\nrefactor: separar documentación por sección",
+            commonError:
+              "Mensajes demasiado largos o ambiguos; usar mayúsculas innecesarias; incluir varios cambios distintos en un solo commit."
+          },
+          {
+            title: "Commits atómicos",
+            description:
+              "Un commit debe representar un cambio pequeño y coherente. Si hiciste 3 cosas diferentes, deberían ser 3 commits.",
+            syntax:
+              "✅ 1 commit = 1 intención\n\nEjemplo:\n- UI: mejorar diseño\n- Data: actualizar modulesData\n- Logic: ajustar getModuleStatus",
+            syntaxAsCode: false,
+            example:
+              "feat: agregar archivos base de ejercicios del modulo 2\nrefactor: ajustar estados de modulos\nfeat: mejorar contenido del modulo 2",
+            commonError:
+              "Subir 20 archivos mezclando UI + lógica + data + ejercicios y llamarlo 'update'. Luego es imposible revisar el PR."
+          }
+        ]
+      }
     ],
   },
   {
