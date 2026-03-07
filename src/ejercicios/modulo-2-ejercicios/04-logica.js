@@ -10,3 +10,11 @@ EJERCICIO 4 - OPERADORES LÓGICOS
 
 Prueba cambiando los valores.
 */
+
+
+let tieneLicencia = false;
+let tieneCarro = true;
+
+let puedeConducir = tieneLicencia && tieneCarro
+
+console.log(puedeConducir)
