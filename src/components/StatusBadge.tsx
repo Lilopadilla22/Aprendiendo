@@ -22,6 +22,11 @@ export default function StatusBadge({ status }: Props) {
       icon: "✅",
       styles: "bg-green-100 text-green-800",
     },
+    construction: {
+    label: "Construction",
+    icon: "🚧",
+    styles: "bg-orange-100 text-orange-800",
+  },
   };
 
   const config = statusConfig[status];
