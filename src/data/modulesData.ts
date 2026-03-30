@@ -309,4 +309,167 @@ export const modulesData: Module[] = [
       "Crea condiciones usando && y ||. Prueba diferentes combinaciones de valores y analiza cuándo el resultado cambia."
     ]
   },
+  {
+    id: 3,
+    title: "Control de Flujo en JavaScript",
+    branch: "modulo-3-control-flujo",
+    description:
+      "Aprende a controlar cómo se ejecuta tu programa usando condiciones y bucles.",
+    documentation:
+      "https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+    summary: `
+      El control de flujo permite que tu programa tome decisiones y repita acciones.
+      No todo el código se ejecuta de forma lineal: a veces necesitas validar condiciones
+      o repetir procesos varias veces.
+
+      En este módulo aprenderás a usar condicionales (if, else, else if),
+      el operador ternario y los bucles (for, while, do while).
+    `,
+    objective:
+      "Comprender cómo controlar la ejecución del código usando condiciones y estructuras repetitivas.",
+    sections: [
+      {
+        title: "Condicionales",
+        documentation:
+          "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/if...else",
+        items: [
+          {
+            title: "if / else",
+            description:
+              "Las condicionales permiten ejecutar código solo cuando una condición se cumple.\n\n\
+  Si la condición es verdadera se ejecuta el bloque del if.\n\
+  Si es falsa se ejecuta el bloque del else.",
+            syntax:
+              "if (condicion) {\n\
+    // código si es verdadero\n\
+  } else {\n\
+    // código si es falso\n\
+  }",
+            example:
+              "let edad = 20;\n\n\
+  if (edad >= 18) {\n\
+    console.log('Puede entrar');\n\
+  } else {\n\
+    console.log('No puede entrar');\n\
+  }",
+            commonError:
+              "Olvidar usar paréntesis en la condición o confundir = con ==."
+          },
+          {
+            title: "else if",
+            description:
+              "Permite evaluar múltiples condiciones diferentes en orden.\n\n\
+  JavaScript evalúa cada condición hasta encontrar una verdadera.",
+            syntax:
+              "if (condicion1) {\n\
+    // código\n\
+  } else if (condicion2) {\n\
+    // código\n\
+  } else {\n\
+    // código final\n\
+  }",
+            example:
+              "let nota = 85;\n\n\
+  if (nota >= 90) {\n\
+    console.log('Excelente');\n\
+  } else if (nota >= 70) {\n\
+    console.log('Aprobado');\n\
+  } else {\n\
+    console.log('Reprobado');\n\
+  }",
+            commonError:
+              "Pensar que todas las condiciones se evalúan. Solo se ejecuta la primera verdadera."
+          }
+        ]
+      },
+      {
+        title: "Operador Ternario",
+        documentation:
+          "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Conditional_Operator",
+        items: [
+          {
+            title: "Condición en una sola línea",
+            description:
+              "El operador ternario es una forma corta de escribir una condición.\n\n\
+  Se usa cuando solo necesitas devolver un valor dependiendo de una condición.",
+            syntax:
+              "condicion ? valorSiVerdadero : valorSiFalso",
+            example:
+              "let edad = 20;\n\n\
+  let mensaje = edad >= 18\n\
+    ? 'Puede entrar'\n\
+    : 'No puede entrar';\n\n\
+  console.log(mensaje);",
+            commonError:
+              "Usar ternarios demasiado largos que hacen el código difícil de leer."
+          }
+        ]
+      },
+      {
+        title: "Bucles",
+        documentation:
+          "https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration",
+        items: [
+          {
+            title: "for",
+            description:
+              "El bucle for se usa cuando sabes cuántas veces quieres repetir una acción.",
+            syntax:
+              "for (inicio; condicion; incremento) {\n\
+    // código que se repite\n\
+  }",
+            example:
+              "for (let i = 0; i < 5; i++) {\n\
+    console.log(i);\n\
+  }",
+            commonError:
+              "Olvidar actualizar la variable del bucle y crear un bucle infinito."
+          },
+          {
+            title: "while",
+            description:
+              "El bucle while ejecuta código mientras una condición sea verdadera.",
+            syntax:
+              "while (condicion) {\n\
+    // código\n\
+  }",
+            example:
+              "let contador = 0;\n\n\
+  while (contador < 3) {\n\
+    console.log(contador);\n\
+    contador++;\n\
+  }",
+            commonError:
+              "No cambiar la condición dentro del bucle y provocar un bucle infinito."
+          },
+          {
+            title: "do while",
+            description:
+              "Este bucle ejecuta el código al menos una vez antes de evaluar la condición.",
+            syntax:
+              "do {\n\
+    // código\n\
+  } while (condicion)",
+            example:
+              "let numero = 5;\n\n\
+  do {\n\
+    console.log(numero);\n\
+    numero--;\n\
+  } while (numero > 0);",
+            commonError:
+              "Pensar que se comporta igual que while. do while siempre se ejecuta al menos una vez."
+          }
+        ]
+      }
+    ],
+    exercises: [
+      "Crea una condición que verifique si un número es mayor que 10.",
+      "Escribe una condición que determine si una persona puede votar (edad >= 18).",
+      "Usa un operador ternario para mostrar 'Mayor de edad' o 'Menor de edad'.",
+      "Crea un bucle for que imprima los números del 1 al 10.",
+      "Crea un bucle while que cuente del 5 al 0."
+    ]
+  }
+    
+
 ];
