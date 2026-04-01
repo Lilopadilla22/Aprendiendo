@@ -16,5 +16,10 @@ Aprender a usar condiciones en una sola línea.
 Mayor de edad
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+
+var edad = 20;
+
+var mensaje = edad >= 18 ? "Mayor de edad" : "Menor de edad";
+
+console.log(mensaje);
