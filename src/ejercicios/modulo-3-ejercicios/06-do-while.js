@@ -15,5 +15,10 @@ Entender que el bloque se ejecuta al menos una vez.
 1
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+
+var numero = 3;
+do {
+  console.log(numero);
+  numero--;
+} while (numero > 0);
