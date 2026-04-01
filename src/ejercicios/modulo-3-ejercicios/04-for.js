@@ -17,5 +17,8 @@ Repetir acciones un número específico de veces.
 5
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+
+for (let i = 1; i <= 5 ; i++) {
+  console.log(i);
+}
