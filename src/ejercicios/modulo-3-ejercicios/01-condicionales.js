@@ -14,5 +14,12 @@ Entender cómo tomar decisiones en el código.
 No puede entrar
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+
+var edad = 17;
+
+if (edad >= 18) {
+  console.log("Puede entrar");
+} else {
+  console.log("No puede entrar");
+}

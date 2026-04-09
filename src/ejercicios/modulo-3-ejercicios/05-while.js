@@ -18,5 +18,10 @@ Repetir acciones mientras una condición se cumpla.
 1
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+let contador = 5;
+
+while (contador > 0) {
+  console.log(contador);
+  contador--;
+}
