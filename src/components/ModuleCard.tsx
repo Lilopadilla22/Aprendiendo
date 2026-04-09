@@ -14,37 +14,39 @@ export default function ModuleCard({ module, status }: Props) {
   const inner = (
     <div
       className={`
-        flex items-start gap-5 py-5 border-b border-gray-100
+        flex items-start gap-4 py-4 border-b border-gray-100
         ${isLocked
           ? "opacity-40 cursor-not-allowed"
-          : "hover:bg-gray-50 transition-colors duration-150 -mx-6 px-6 cursor-pointer"
+          : "hover:bg-gray-50 transition-colors duration-150 cursor-pointer"
         }
       `}
     >
-      <span className="font-mono text-xs text-gray-400 mt-0.5 w-5 flex-shrink-0">
+      <span className="font-mono text-xs text-gray-400 mt-0.5 w-5 flex-shrink-0 hidden sm:block">
         {num}
       </span>
 
       <div className="flex-1 min-w-0">
-        <p className={`text-sm font-semibold ${isLocked ? "text-gray-400" : "text-gray-900"}`}>
+        <p className={`text-sm font-semibold leading-snug ${isLocked ? "text-gray-400" : "text-gray-900"}`}>
           {module.title}
         </p>
-        <p className="text-xs text-gray-400 mt-0.5 leading-relaxed">
+        <p className="text-xs text-gray-400 mt-1 leading-relaxed">
           {module.description}
         </p>
-        <p className="text-xs text-gray-300 font-mono mt-1.5">
+        <p className="text-xs text-gray-300 font-mono mt-1.5 truncate">
           {module.branch}
         </p>
       </div>
 
-      <StatusBadge status={status} />
+      <div className="flex-shrink-0 pt-0.5">
+        <StatusBadge status={status} />
+      </div>
     </div>
   );
 
   if (isLocked) return inner;
 
   return (
-    <Link to={`/modulo/${module.id}`} className="block -mx-6 px-6">
+    <Link to={`/modulo/${module.id}`} className="block">
       {inner}
     </Link>
   );
