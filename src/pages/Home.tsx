@@ -5,32 +5,34 @@ import ProgressBar from "../components/ProgressBar";
 
 export default function Home() {
   const totalModules = modulesData.length;
-  const completedModules = Object.values(modulesStatus).filter(
-    (status) => status === "completed"
-  ).length;
-
-  const percentage = Math.round(
-    (completedModules / totalModules) * 100
-  );
+  const completed = Object.values(modulesStatus).filter(s => s === "completed").length;
+  const percentage = Math.round((completed / totalModules) * 100);
 
   return (
-    <div className="max-w-5xl mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-4">
-        Aprendiendo 🚀
-      </h1>
+    <div className="max-w-2xl mx-auto px-6 py-16">
 
-      <p className="text-gray-600 mb-8">
-        Aprende JavaScript y Git como en un equipo real.
-      </p>
+      <div className="mb-12">
+        <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          Guía de repaso JavaScript
+        </h1>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          Para desarrolladores que quieren consolidar su base con ejemplos claros
+          y ejercicios prácticos.
+        </p>
+      </div>
 
-      <ProgressBar percentage={percentage} />
+      <ProgressBar
+        percentage={percentage}
+        completed={completed}
+        total={totalModules}
+      />
 
-      <div className="grid gap-6">
+      <div>
         {modulesData.map((module) => (
           <ModuleCard
             key={module.id}
             module={module}
-            status={modulesStatus[module.id]}
+            status={modulesStatus[module.id] ?? "locked"}
           />
         ))}
       </div>
