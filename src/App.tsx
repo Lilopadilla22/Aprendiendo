@@ -2,6 +2,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ModuleDetail from "./pages/ModuleDetail";
+import Estructura from "./pages/Estructura";
+import Patrones from "./pages/Patrones";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/modulo/:id" element={<ModuleDetail />} />
+          <Route path="/estructura" element={<Estructura />} />
+          <Route path="/patrones" element={<Patrones />} />
         </Routes>
       </BrowserRouter>
     </div>
