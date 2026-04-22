@@ -19,5 +19,28 @@ resultado es par o impar.
 "El resultado 16 es par"
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+
+function operar(num) {
+  const resultado = num * 2;
+  return console.log("El resultado es " + resultado);
+}
+
+function esPar(num) {
+  let result = "";
+  if (num % 2 === 0) {
+    result = " es par";
+  } else {
+    result = " es impar";
+  }
+
+  return console.log(num + result);
+}
+function resultadoCallback(num, callback) {
+  callback(num);
+}
+
+resultadoCallback(5, operar);
+resultadoCallback(8, esPar);
+resultadoCallback(3, esPar);
+resultadoCallback(16, esPar);
