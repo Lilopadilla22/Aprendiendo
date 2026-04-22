@@ -18,3 +18,9 @@ Entender cómo los valores por defecto evitan resultados undefined inesperados.
 
 
 // ✍️ Escribe tu solución aquí 👇
+
+function presentar(nombre, rol="Visitante"){
+   return "Hola, Soy " + nombre + " y soy " + rol
+}
+console.log(presentar("William"))
+console.log(presentar("William", "Desarrollador"))
