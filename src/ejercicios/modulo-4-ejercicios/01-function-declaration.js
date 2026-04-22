@@ -14,5 +14,14 @@ Practicar la declaración de funciones y el uso de return.
 "Hola, Ana!"
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+
+function saludar(nombre) {
+  return "Hola, " + nombre;
+}
+console.log(saludar("William"));
+
+const miNombre = function (nombre) {
+  return nombre;
+};
+console.log(miNombre("William"));
