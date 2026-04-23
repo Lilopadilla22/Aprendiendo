@@ -19,5 +19,12 @@ y capturar el valor que fue eliminado.
 [array con las 2 tareas restantes]
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+
+const tareas = ["Estudiar", "Hacer ejercicio", "Hacer comida", "Jugar"]
+console.log(tareas)
+const tarea1 = tareas.pop()
+console.log(tarea1)
+const tarea2 = tareas.shift()
+console.log(tarea2)
+console.log(tareas)
