@@ -38,3 +38,8 @@ const perfil = {
 };
 
 // ✍️ Escribe tu solución aquí 👇
+console.log("email" in perfil ? "Tiene Email" : "No tiene email")
+console.log("telefono" in perfil ? "Tiene telefono" : "No tiene telefono")
+console.log(perfil.telefono)
+perfil.telefono = 3017423827
+console.log("telefono" in perfil ? "Ahora si tiene telefono" : "No tiene telefono")
