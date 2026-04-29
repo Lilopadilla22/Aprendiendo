@@ -29,3 +29,7 @@ const pelicula = {
 };
 
 // ✍️ Escribe tu solución aquí 👇
+pelicula.anio = 2011;
+pelicula.genero = "Ciencia ficción";
+delete pelicula.director;
+console.log(pelicula)
