@@ -25,3 +25,19 @@ Practicar cómo crear un objeto y leer sus propiedades de distintas formas.
 
 
 // ✍️ Escribe tu solución aquí 👇
+
+const producto = {
+   nombre: "Play 5",
+   precio: 2000000,
+   disponible:true
+}
+console.log(producto.nombre)
+console.log(producto.precio)
+console.log(producto.disponible)
+
+console.log(producto["nombre"])
+console.log(producto["precio"])
+console.log(producto["disponible"])
+
+const valor = "precio";
+console.log(producto[valor])
