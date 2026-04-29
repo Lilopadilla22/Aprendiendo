@@ -44,12 +44,22 @@ const auto = {
 // ✍️ Escribe tu solución aquí 👇
 
 // 1. for...in
-
+for (const datos in auto){
+  console.log(datos + ":", auto[datos])
+}
 
 // 2. Object.keys
+const carro = Object.keys(auto)
+console.log(carro)
 
+carro.forEach(carro =>{
+  console.log(carro + ":", auto[carro])
+})
 
 // 3. Object.values
-
-
+const valores = Object.values(auto)
+console.log(valores)
 // 4. Object.entries
+Object.entries(auto).forEach(([vehiculo,valor])=>{
+  console.log(vehiculo + ":", valor)
+})

@@ -23,3 +23,14 @@ Practicar cómo trabajar con listas donde cada elemento tiene múltiples propied
 
 
 // ✍️ Escribe tu solución aquí 👇
+
+const estudiantes = [
+   {nombre:"Ana", edad: 22, aprobado:true},
+   {nombre:"Luis", edad: 19, aprobado:false},
+   {nombre:"Sofia", edad: 21, aprobado:true}
+]
+
+estudiantes.forEach(estudiante => {
+   console.log(estudiante.nombre, "-", estudiante.edad + " años " + "-", estudiante.aprobado ? "Aprobado" : "Reprobado")
+});
+console.log(estudiantes[1].nombre)
