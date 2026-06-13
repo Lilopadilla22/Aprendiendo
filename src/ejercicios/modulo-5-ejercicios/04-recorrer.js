@@ -32,14 +32,21 @@ Producto: teclado
 ...
 */
 
-const productos = ['laptop', 'teclado', 'mouse', 'monitor'];
+const productos = ["laptop", "teclado", "mouse", "monitor"];
 
 // ✍️ Escribe tu solución aquí 👇
 
 // 1. for clásico
-
+for (let i = 0; i < productos.length; i++) {
+  console.log("Posicion " + i + ": " + productos[i]);
+}
 
 // 2. for...of
-
+for (const producto of productos){
+  console.log("Producto: " + producto)
+}
 
 // 3. forEach
+productos.forEach(producto => {
+  console.log(producto)
+});

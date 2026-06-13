@@ -18,3 +18,12 @@ Practicar cómo agregar elementos al inicio y al final de un array.
 
 
 // ✍️ Escribe tu solución aquí 👇
+
+const colores = ["rojo", "verde", "azul"];
+console.log(colores)
+colores.push("negro");
+console.log(colores)
+colores.unshift("blanco")
+console.log(colores)
+
+

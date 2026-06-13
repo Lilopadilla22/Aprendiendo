@@ -19,3 +19,8 @@ undefined
 
 
 // ✍️ Escribe tu solución aquí 👇
+
+const nombres = ["Pepito Perez", "Fulanito", "Perensejo", "Juanito", "Jaimito"];
+console.log(nombres[0])
+console.log(nombres[nombres.length - 1])
+console.log(nombres[5])

@@ -27,6 +27,20 @@ const invitados = ['Carlos', 'María', 'Luis', 'Sofía', 'Pedro'];
 "Ana no está en la lista"
 */
 
-const invitados = ['Carlos', 'María', 'Luis', 'Sofía', 'Pedro'];
+const invitados = ["Carlos", "María", "Luis", "Sofía", "Pedro"];
 
 // ✍️ Escribe tu solución aquí 👇
+if (invitados.indexOf("María") !== -1) {
+  console.log("Maria esta invitada");
+} else {
+  console.log("Maria no esta invitada");
+}
+
+if (invitados.indexOf("Juan") !== -1) {
+  console.log("Juan esta invitado");
+} else {
+  console.log("Juan no esta invitado");
+}
+
+console.log("Luis esta en la posicion " + invitados.indexOf("Luis"));
+console.log(invitados.indexOf("Ana") + " Ana no esta en la lista");
