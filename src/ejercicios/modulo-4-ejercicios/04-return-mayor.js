@@ -16,5 +16,21 @@ Practicar el uso de return dentro de condicionales.
 "Son iguales"
 */
 
-
 // ✍️ Escribe tu solución aquí 👇
+
+let resultado;
+function mayorQue(a, b) {
+  let resultado;
+  if (a > b) {
+    resultado = a;
+  } else if (b > a) {
+    resultado = b;
+  } else {
+    resultado = "Son iguales";
+  }
+  return resultado;
+}
+
+console.log(mayorQue(10, 3));
+console.log(mayorQue(1, 3));
+console.log(mayorQue(3, 3));

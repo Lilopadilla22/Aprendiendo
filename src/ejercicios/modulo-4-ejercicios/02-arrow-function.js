@@ -22,3 +22,11 @@ Reescribir funciones usando la sintaxis moderna de arrow functions.
 
 
 // ✍️ Escribe tu solución aquí 👇
+
+const multiplicar = (a,b)=>{
+  return a*b;
+}
+console.log(multiplicar(6,2))
+
+const multiply =(a,b) => a*b
+console.log(multiply(6,2))
